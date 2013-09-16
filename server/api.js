@@ -11,9 +11,9 @@ exports.root = function (req, res){
 		else {
 
 			var json = JSON.parse(f.toString())
-			var pretty = JSON.stringify(json, null, 4)
+			var pretty = JSON.stringify(json, null, 2)
 			console.log(pretty)
-			res.render('index', {json:json})
+			res.render('index', {json:pretty})
 		}	
 	})
 	

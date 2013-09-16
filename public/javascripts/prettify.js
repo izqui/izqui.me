@@ -1,5 +1,12 @@
-//From http://stackoverflow.com/questions/4810841/json-pretty-print-using-javascript
+$(function (){
 
+    var code = $('pre.code')
+    
+    //TODO: implement in the future
+    //code.text(syntaxHighlight(code.text()))
+})
+
+//From http://stackoverflow.com/questions/4810841/json-pretty-print-using-javascript
 function syntaxHighlight(json) {
     if (typeof json != 'string') {
          json = JSON.stringify(json, undefined, 2);

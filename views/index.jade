@@ -2,5 +2,5 @@ extends layout
 
 block content
 	div#json
-		pre.code!= syntaxHighlight(JSON.stringify(json, undefined, 2))
+		pre.code!= json
 		
