@@ -1,6 +1,7 @@
 body {
 
 	background-color: #fdf9ee;
+
 }
 .code {
 	font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
@@ -13,12 +14,18 @@ div#json{
 
 	width: 50%;
 	float: left;
+	height: 100%;
+	overflow:auto;
+	
 }
 div#right{
 
 	width: 50%;
 	height: 100%;
 	float:left;
+	
+	position: fixed;
+	
 }
 
 span.key{
@@ -32,4 +39,11 @@ span.number{
 span.boolean{
 
 	color:#a46f48;
+}
+img#cover{
+
+	width:80%;
+	text-align: center;
+	margin-left: 115%;
+	margin-top: 60%;
 }

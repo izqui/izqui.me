@@ -26,7 +26,7 @@ exports.root = function (req, res){
 				}
 
 				var pretty = JSON.stringify(json, null, 2)
-				res.render('index', {json:json, pretty:jsonP.prettify(pretty)})
+				res.render('index', {json:json, pretty:jsonP.prettify(pretty), image:config.image})
 			})
 		}	
 	})
