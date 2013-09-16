@@ -1,3 +1,7 @@
+body {
+
+	background-color: #fdf9ee;
+}
 .code {
 	font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 	font-size: 13px;
@@ -26,6 +30,6 @@ span.number{
 	color:gray;
 }
 span.boolean{
-	
-	color:red;
+
+	color:#a46f48;
 }
