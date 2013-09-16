@@ -1,5 +1,0 @@
-API
-===
-
-*Content: /api/[lang].json E.g.: http://izqui.me/api/en.json
-*Languages: /api/languages

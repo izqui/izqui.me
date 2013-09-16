@@ -1,5 +1,7 @@
 var fs = require('fs'),
-	path = require('path')
+	path = require('path'),
+	jsonP = require('../helpers/json'),
+	config = require('../config')
 
 exports.root = function (req, res){
 
@@ -10,12 +12,22 @@ exports.root = function (req, res){
 		if (err) res.send(500)
 		else {
 
-			var json = JSON.parse(f.toString())
-			var pretty = JSON.stringify(json, null, 2)
-			res.render('index', {json:pretty})
+			fs.readdir(path.join(__dirname, '..', 'images'), function (err, files){
+
+				var json = JSON.parse(f.toString())
+				json.images = {}
+				for (var i in files){
+
+					var file = files[i]
+					var name = file.slice(0, file.indexOf('.'))
+					json.images[name] = config.base+'images/'+file
+				}
+
+				var pretty = JSON.stringify(json, null, 2)
+				res.render('index', {json:json, pretty:jsonP.prettify(pretty)})
+			})
 		}	
 	})
-	
 }
 
 exports.api = function (req, res){
@@ -39,3 +51,4 @@ exports.languages = function (req, res){
 		res.send(JSON.stringify(langs, null, 4))
 	})	
 }
+

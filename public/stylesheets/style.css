@@ -1,9 +1,23 @@
 .code {
 	font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 	font-size: 13px;
-	
+	white-space: pre-wrap;
 }
 
-pre {
-    white-space: pre-wrap;
+
+div#json{
+
+	width: 50%;
+	float: left;
+}
+div#right{
+
+	width: 50%;
+	height: 100%;
+	float:left;
+}
+
+span.key{
+
+	font-weight: bold;
 }

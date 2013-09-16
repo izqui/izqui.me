@@ -15,6 +15,7 @@ app.use(express.bodyParser());
 app.use(express.methodOverride())
 app.use('/static',express.static(path.join(__dirname, '..', 'public')));
 app.use('/api', express.static(path.join(__dirname, '..', 'content')));
+app.use('/images', express.static(path.join(__dirname, '..', 'images')))
 
 app.use(app.router);
 

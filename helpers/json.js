@@ -1,11 +1,6 @@
-$(function (){
+//From: http://stackoverflow.com/questions/4810841/json-pretty-print-using-javascript
 
-    var code = $('p.code')
-
-})
-
-
-function syntaxHighlight(json) {
+exports.prettify = function (json) {
     if (typeof json != 'string') {
          json = JSON.stringify(json, undefined, 2);
     }
@@ -26,3 +21,13 @@ function syntaxHighlight(json) {
         return '<span class="' + cls + '">' + match + '</span>';
     });
 }
+
+/*
+//From: http://stackoverflow.com/questions/1500260/detect-urls-in-text-with-javascript
+exports.urlify = function (text) {
+    var urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, function(url) {
+        return '<a href="' + url + '">' + url + '</a>';
+    })
+}
+*/
