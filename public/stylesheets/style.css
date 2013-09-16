@@ -21,3 +21,11 @@ span.key{
 
 	font-weight: bold;
 }
+span.number{
+
+	color:gray;
+}
+span.boolean{
+	
+	color:red;
+}

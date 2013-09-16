@@ -1,7 +1,7 @@
 {
 
 	"name":"Jorge Izquierdo",
-	"bio":"Geek and bug writter",
+	"bio":"Geek and bug writer",
 	"version":"v0.16 beta",
 	"email":"jorge@izqui.me",
 	"blog":"http://blog.izqui.me",
@@ -43,7 +43,8 @@
 		"position":"CTO",
 		"founder":true,
 		"company":"Cardwee",
-		"website":"http://cardwee.com"
+		"website":"http://cardwee.com",
+		"team":["Luis Ivan Cuende (@licuende)", "Néstor Palao (@menpalapps)", "(Former) Danny Saltaren (@dsaltaren)"]
 	},
 	"availableForWork":false,
 	"projects":[
@@ -53,21 +54,24 @@
 			"version":"2.0",
 			"launched":"2012",
 			"active":true,
-			"website":"http://showyapp.com"	
+			"website":"http://showyapp.com",
+			"team":["Jose Cruz (@jcruzmac)"]
 		},
 		{
 			"name":"A++genda",
 			"version":"2.0",
 			"launched":"2011",
 			"active":false,
-			"website":"https://itunes.apple.com/es/app/a++genda-agenda-2.0/id463364410?mt=8"	
+			"website":"https://itunes.apple.com/es/app/a++genda-agenda-2.0/id463364410?mt=8",
+			"team":[]
 		},
 		{
 			"name":"uRlate",
 			"version":"1.1",
 			"launched":"2011",
 			"active":false,
-			"website":"https://itunes.apple.com/es/app/urlate/id429368794?mt=8"	
+			"website":"https://itunes.apple.com/es/app/urlate/id429368794?mt=8",
+			"team":[]
 		}
 
 	],
@@ -99,6 +103,27 @@
 
 		}
 
+	],
+	"awards":[
+		{
+
+			"name":"WWDC 2013 Scholarship",
+			"location":"San Francisco (CA), USA",
+			"time":"June 2013",
+			"prize":"WWDC ticket",
+			"website":"https://developer.apple.com/wwdc/students/",
+			"image":"http://izqui.me/images/wwdc.png",
+			"team":[]
+		},
+		{
+			"name":"FIWARE Hackathon Winner",
+			"location":"London, UK",
+			"time": "September 2013",
+			"prize": "$$$", 
+			"website": "http://www.fi-ware.eu/hackathon/",
+			"image":"http://izqui.me/images/campus.jpg",
+			"team":["Alejandro Perezpayá (@alexdev_)", "Alberto Elias (@aeliasnet)", "Braulio Valdivielso (@bvaldivielso)"]
+		}
 	],
 	"hobbies":["programming", "soccer", "running"],
 	"music":["Coldplay", "One Republic", "Fun", "Abraham Mateo xD"]
