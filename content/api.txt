@@ -2,4 +2,5 @@ API
 ===
 
 *Content: /api/[lang].json E.g.: http://izqui.me/api/en.json
+*Images: /api/images E.g.: http://izqui.me/api/images
 *Languages: /api/languages E.g: http://izqui.me/api/languages
