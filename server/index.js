@@ -1,7 +1,8 @@
 var express = require('express'),
 	path = require('path')
 
-var api = require('./api')
+var api = require('./api'),
+	middleware = require('./middleware')
 
 var app = express()
 
@@ -13,6 +14,7 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride())
 app.use('/static',express.static(path.join(__dirname, '..', 'public')));
+app.use('/api', express.static(path.join(__dirname, '..', 'content')));
 
 console.log(path.join(__dirname, '..', 'public'))
 app.use(app.router);
