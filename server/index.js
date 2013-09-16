@@ -16,7 +16,6 @@ app.use(express.methodOverride())
 app.use('/static',express.static(path.join(__dirname, '..', 'public')));
 app.use('/api', express.static(path.join(__dirname, '..', 'content')));
 
-console.log(path.join(__dirname, '..', 'public'))
 app.use(app.router);
 
 
@@ -26,5 +25,7 @@ if ('development' == app.get('env')) {
 
 //Routes
 app.get('/', api.root)
+app.get('/api', api.api)
+app.get('/api/languages', middleware.json, api.languages)
 
 module.exports = exports = app

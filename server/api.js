@@ -12,10 +12,30 @@ exports.root = function (req, res){
 
 			var json = JSON.parse(f.toString())
 			var pretty = JSON.stringify(json, null, 2)
-			console.log(pretty)
 			res.render('index', {json:pretty})
 		}	
 	})
 	
 }
 
+exports.api = function (req, res){
+
+	res.sendfile(path.join(__dirname, '..', 'content', 'api.txt'))
+}
+
+exports.languages = function (req, res){
+
+	fs.readdir(path.join(__dirname, '..', 'content'), function (err, files){
+
+		var langs = {langs:[]}
+		for (var i in files){
+
+			var file = files[i]
+			if (file.indexOf('.json') !== -1){
+
+				langs.langs.push(file.replace('.json', ''))
+			}
+		}
+		res.send(JSON.stringify(langs, null, 4))
+	})	
+}
