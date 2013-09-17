@@ -3,5 +3,10 @@ extends layout
 block content
 	div#json
 		p.code!= pretty
-	div#right
-		img#cover(src=json.images[image])
+	
+	div.bottomright
+			div#cover(style="background-image:url(#{json.images[image]})")
+				div#text
+					a#name(href="http://blog.izqui.me") Jorge Izquierdo
+					br 
+					a#twitter(href="http://twitter.com/izqui9") @izqui9

@@ -20,18 +20,12 @@ div#json{
 	overflow-y:scroll;
 	
 }
-div#right{
 
-	width: 50%;
-	height: 100%;
-	float:left;
-	position: relative;
-	
-}
 
 span.key{
 
 	font-weight: bold;
+	color:#7f3c28;
 }
 span.number{
 
@@ -39,16 +33,46 @@ span.number{
 }
 span.boolean{
 
-	color:#a46f48;
+	color:gray;
 }
-img#cover{
+#cover{
+
+	width:500px;
+	height:282px;
+	background-size: contain;
+}
+
+#text {
 
 	position: fixed;
-	bottom:10px;
+	bottom: 7px;
 	right: 10px;
-	width:40%;
+	text-align: right;
 	
 	
+}
+a#name{
+
+	text-decoration: none;
+	color:#ffffff;
+	font-family: "HelveticaNeue-UltraLight", "Helvetica Neue Ultra Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   	font-size: 40px;
+   	margin: 0px;
+}
+a#twitter{
+
+	margin:0px;
+	text-decoration: none;
+	color:#ffffff;
+	font-family: "HelveticaNeue-UltraLight", "Helvetica Neue Ultra Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   	font-size: 30px;
+}
+.bottomright{
+
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+
 }
 
 @media screen and (max-width: 480px){
@@ -57,7 +81,7 @@ img#cover{
 
 		width:100%;
 	}
-	div#right{
+	#cover{
 
 		display: none;
 	}
