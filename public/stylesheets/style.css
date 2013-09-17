@@ -59,7 +59,7 @@ img#cover{
 	}
 	div#right{
 
-		display: hidden;
+		display: none;
 	}
 }
 }
