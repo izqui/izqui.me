@@ -17,12 +17,12 @@ exports.root = function (req, res){
 				var json = JSON.parse(f.toString())
 
 				//Images
-				json.images = {}
+				json.images = {}	
 				for (var i in files){
 
 					var file = files[i]
 					var name = file.slice(0, file.indexOf('.'))
-					json.images[name] = ((process.env.NODE_ENV == 'prod') ? config.base:'http://localhost:3000/')+'images/'+file
+					json.images[name] = ((process.env.NODE_ENV == 'production') ? config.base:'http://localhost:3000/')+'images/'+file
 				}
 
 				var pretty = JSON.stringify(json, null, 2)
