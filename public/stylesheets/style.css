@@ -50,3 +50,16 @@ img#cover{
 	
 	
 }
+
+@media screen and (max-width: 480px){
+
+	div#json{
+
+		width:100%;
+	}
+	div#right{
+
+		display: hidden;
+	}
+}
+}
