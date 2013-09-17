@@ -1,6 +1,7 @@
 body {
 
 	background-color: #fdf9ee;
+	overflow-y: hidden;
 
 }
 .code {
@@ -15,7 +16,8 @@ div#json{
 	width: 50%;
 	float: left;
 	height: 100%;
-	overflow:auto;
+	overflow: auto;
+	overflow-y:scroll;
 	
 }
 div#right{
@@ -24,7 +26,6 @@ div#right{
 	height: 100%;
 	float:left;
 	
-	position: fixed;
 	
 }
 
@@ -42,8 +43,11 @@ span.boolean{
 }
 img#cover{
 
-	width:80%;
+	width:40%;
 	text-align: center;
-	margin-left: 115%;
-	margin-top: 60%;
+	top:50%;
+	left:50%;
+	margin-top: -250px;
+	margin-left: 80px;
+	position: fixed;
 }

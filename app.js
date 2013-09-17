@@ -1,6 +1,6 @@
 //Port and env
 var env = process.argv[2] || 'dev';
-var PORT = ((env == 'prod') ? 80 : 3000);
+var PORT = process.env.PORT || 3000
 process.env.NODE_ENV = ((env == 'prod') ? 'production' : 'development');
 
 
