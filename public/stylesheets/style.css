@@ -25,7 +25,7 @@ div#right{
 	width: 50%;
 	height: 100%;
 	float:left;
-	
+	position: relative;
 	
 }
 
@@ -43,11 +43,10 @@ span.boolean{
 }
 img#cover{
 
-	width:40%;
-	text-align: center;
-	top:50%;
-	left:50%;
-	margin-top: -250px;
-	margin-left: 80px;
 	position: fixed;
+	bottom:10px;
+	right: 10px;
+	width:40%;
+	
+	
 }
