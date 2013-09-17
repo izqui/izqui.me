@@ -81,7 +81,7 @@ a#twitter{
 
 		width:100%;
 	}
-	#cover{
+	#cover, a#github{
 
 		display: none;
 	}
