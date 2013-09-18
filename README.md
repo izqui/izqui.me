@@ -47,9 +47,8 @@ npm start
 
 The website also has a very simple REST API to get data.
 
-```
-Get content of language: GET /api/[lang].json E.g.: http://izqui.me/api/en.json
-Images: GET /api/images E.g.: http://izqui.me/api/images
-List of languages: GET /api/languages E.g: http://izqui.me/api/languages
-```
+	*Get content of language: `GET /api/[lang].json E.g.: http://izqui.me/api/en.json`
+	*Images: `GET /api/images E.g.: http://izqui.me/api/images`
+	*Language list: `GET /api/languages E.g: http://izqui.me/api/languages`
+
 
