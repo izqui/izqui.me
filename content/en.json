@@ -129,5 +129,7 @@
 	],
 	"hobbies":["programming", "soccer", "running"],
 	"favoriteColor":"#00e8ff",
-	"music":["Coldplay", "One Republic", "Fun", "Abraham Mateo xD"]
+	"music":["Coldplay", "One Republic", "Fun", "Abraham Mateo xD"],
+	"favoriteWebsites":["The Verge", "Daring Fireball", "Hacker News"],
+	"favoritePodcasts":["Accidental Tech Podcast", "Core Intuition", "Developing Perspective", "The Talk Show"]
 }
