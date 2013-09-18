@@ -1,7 +1,13 @@
 body {
 
 	background-color: #fdf9ee;
-	overflow-y: hidden;
+	overflow: hidden;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	margin: 0;
+	padding: 10px;
+	box-sizing: border-box;
 
 }
 .code {
