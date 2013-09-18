@@ -1,7 +1,7 @@
 izqui.me
 ========
 
-A nodeJS powered JSON Portfolio/CV
+A nodeJS powered JSON Portfolio/CV. Example: [izqui.me](http://izqui.me)
 
 ## Motivation
 
