@@ -5,7 +5,14 @@ var fs = require('fs'),
 
 exports.root = function (req, res){
 
-	var lang = 'en'
+	var lang = ""
+
+	//Check if lang file exists before reading the file
+	if (req.params.lang && fs.existsSync(path.join(__dirname, '..', 'content', req.params.lang+'.json'))){
+		
+		lang = req.params.lang
+	}
+	else lang = config.defaultLang
 	
 	fs.readFile(path.join(__dirname,'..', 'content', lang+'.json'), function (err, f){
 

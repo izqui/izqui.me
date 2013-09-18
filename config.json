@@ -1,5 +1,6 @@
 {
 
 	"base":"http://new.izqui.me/",
-	"image":"wwdc"
+	"image":"wwdc",
+	"defaultLang":"en"
 }
