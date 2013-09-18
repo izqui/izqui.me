@@ -5,7 +5,7 @@ A nodeJS powered JSON Portfolio/CV. Example: [izqui.me](http://izqui.me)
 
 ## Motivation
 
-While flying home with my friend [Luis](http://github.com/luisivan) from London (after Campus Party Europe) we had an argument with some passanger on the plane that Luis explains further [here](https://github.com/luisivan/fakematrix#the-story)
+While flying home with my friend [Luis](http://github.com/luisivan) from London (after Campus Party Europe) we had an argument with some passangers on the plane that Luis explains further [here](https://github.com/luisivan/fakematrix#the-story)
 
 They called us "niñatos" and laugh at us, so we decided to build something from the ground up on the plane to prove we are not. Luis build [this](https://github.com/luisivan/fakematrix) in order to scare them and I decided to build myself a website due that I don't update my blog frequently.
 
