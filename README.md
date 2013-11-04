@@ -52,3 +52,6 @@ The website also has a very simple REST API to get data.
 	*Language list: `GET /api/languages E.g: http://izqui.me/api/languages`
 
 
+It works with APNS (Apple push notification service) to send my iPhone a push notification with the text.
+
+	*PUSH /api/message (The text in the notification is the text property in the http body)
