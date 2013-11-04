@@ -33,4 +33,7 @@ app.get('/api/images', middleware.json, api.images)
 
 app.get('/:lang',middleware.phone, api.root)
 
+//Messaging
+app.post('/api/message', middleware.json, api.sendMessage)
+
 module.exports = exports = app
