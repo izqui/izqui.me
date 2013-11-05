@@ -1,0 +1,1 @@
+exports.redirect = require('./redirect')

@@ -2,5 +2,9 @@
 
 	"base":"http://izqui.me/",
 	"image":"wwdc",
-	"defaultLang":"en"
+	"defaultLang":"en",
+	"redirects":[
+		"http://marca.com",
+		"http://izqui.me"
+	]
 }

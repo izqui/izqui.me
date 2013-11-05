@@ -32,7 +32,8 @@ app.get('/', middleware.phone, api.root)
 app.get('/api', api.api)
 app.get('/api/languages', middleware.json, api.languages)
 app.get('/api/images', middleware.json, api.images)
-app.get('/ip', api.ip)
+app.get('/r', api.redirecter)
+app.get('/redirectees', api.redirectees)
 
 app.get('/:lang',middleware.phone, api.root)
 

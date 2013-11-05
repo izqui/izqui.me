@@ -1,9 +1,11 @@
 var fs = require('fs'),
 	path = require('path'),
 	jsonP = require('../helpers/json'),
-	config = require('../config')
+	config = require('../config'),
+	mongoose = require('mongoose'),
+	notifs = require('../helpers/notifs')
 
-var apn = require('apn')
+var Redirect = mongoose.model('Redirect')
 
 exports.root = function (req, res){
 
@@ -86,19 +88,7 @@ exports.sendMessage = function (req, res){
 
 	if (text){
 
-		var options = { "gateway": "gateway.sandbox.push.apple.com", "cert":path.join(__dirname, '..', 'certs/cert.pem'), "key":path.join(__dirname, '..', 'certs/key.pem')};
-		var token  = 'e4410fd56a2d1246f4b810217f26ff4080f4f4fbf76917a3a2c7766bdc309c50';
-
-		var connection = new apn.Connection(options);
-		var device = new apn.Device(token)
-
-		var not = new apn.Notification();
-		not.expiry = Math.floor(Date.now() / 1000) + 3600*8;
-		not.badge = 1;
-		not.alert = text;
-
-		connection.pushNotification(not, device);
-
+		notifs.sendMessage(text);
 		res.send(200, JSON.stringify({'status':'sent'}))
 	}
 
@@ -110,7 +100,16 @@ exports.sendMessage = function (req, res){
 	connection.pushNotification(not, device);
 }
 
-exports.ip = function (req, res){
+exports.redirecter = function (req, res){
 
-	res.send(req.headers['x-forwarded-for'] || req.connection.remoteAddress)
+	var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress
+	var ua = req.headers['user-agent']
+	var red = config.redirects[parseInt(req.query.r)] || config.redirects[0]
+
+	Redirect.create(red, ip, ua, function (err){
+
+		res.redirect(red)
+		notifs.sendMessage('Visit from '+ip+' to '+red)
+	})
+	
 }
