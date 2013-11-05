@@ -109,3 +109,8 @@ exports.sendMessage = function (req, res){
 
 	connection.pushNotification(not, device);
 }
+
+exports.ip = function (req, res){
+
+	res.send(req.headers['x-forwarded-for'] || req.connection.remoteAddress)
+}

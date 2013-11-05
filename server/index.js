@@ -26,14 +26,19 @@ if ('development' == app.get('env')) {
 }
 
 //Routes
+
+
 app.get('/', middleware.phone, api.root)
 app.get('/api', api.api)
 app.get('/api/languages', middleware.json, api.languages)
 app.get('/api/images', middleware.json, api.images)
+app.get('/ip', api.ip)
 
 app.get('/:lang',middleware.phone, api.root)
 
 //Messaging
 app.post('/api/message', middleware.json, api.sendMessage)
+
+
 
 module.exports = exports = app
