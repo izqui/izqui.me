@@ -5,7 +5,8 @@ var fs = require('fs'),
 	mongoose = require('mongoose'),
 	notifs = require('../helpers/notifs')
 
-var Redirect = mongoose.model('Redirect')
+var Redirect = mongoose.model('Redirect'),
+	Message = mongoose.model('Message')
 
 exports.root = function (req, res){
 
@@ -88,16 +89,27 @@ exports.sendMessage = function (req, res){
 
 	if (text){
 
-		notifs.sendMessage(text);
-		res.send(200, JSON.stringify({'status':'sent'}))
+		notifs.send(text);
+		Message.create(text, function (err){
+
+			if (err) res.send(500)
+			else res.send(200, JSON.stringify({'status':'sent'}))
+		})
+		
 	}
 
 	else {
 
 		res.send(400, JSON.stringify({'error':'no text'}))
 	}
+}
 
-	connection.pushNotification(not, device);
+exports.getMessages = function (req, res){
+
+	Message.find({}).limit(40).select('date text').sort('-date').exec(function (err, ms){
+
+		res.send(ms)
+	})
 }
 
 exports.redirecter = function (req, res){
@@ -109,14 +121,14 @@ exports.redirecter = function (req, res){
 	Redirect.create(red, ip, ua, function (err){
 
 		res.redirect(red)
-		notifs.sendMessage('Visit from '+ip+' to '+red)
+		notifs.send('Visit from '+ip+' to '+red)
 	})
 	
 }
 
 exports.redirectees = function (req, res){
 
-	Redirect.find({}, '-_id', function (err, rs){
+	Redirect.find({}).select('-_id').sort('date').exec(function (err, rs){
 
 		res.render('redirectees', {json:{name:'Red'}, rs:rs})
 	})

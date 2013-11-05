@@ -6,5 +6,6 @@
 	"redirects":[
 		"http://marca.com",
 		"http://izqui.me"
-	]
+	],
+	"messagekey_header":"X-Messages-Key"
 }

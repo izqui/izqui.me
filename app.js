@@ -8,6 +8,7 @@ var mongoose = require('mongoose'),
 
 mongoose.connect('mongodb://localhost/izquidb')
 mongoose.model('Redirect', model.redirect)
+mongoose.model('Message', model.message)
 
 
 //Server boot
