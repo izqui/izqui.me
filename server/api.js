@@ -113,3 +113,12 @@ exports.redirecter = function (req, res){
 	})
 	
 }
+
+exports.redirectees = function (req, res){
+
+	Redirect.find({}, '-_id', function (err, rs){
+
+		res.render('redirectees', {json:{name:'Red'}, rs:rs})
+	})
+
+}
