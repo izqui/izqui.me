@@ -10,8 +10,8 @@
 
 			var text = $('#url').val() 
 			var json = JSON.stringify({url:text})
-			document.href = "pebblejs:///close#" + json
-			
+			document.location.href = "pebblejs:///close#" + json
+			return false;
 		})
 	})
 	 </script>
