@@ -2,10 +2,24 @@
 <html>
 <head>
 	<title>Config</title>
+	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	 <script>
+	$(function (){
+
+		$('#submit').click(function (e){
+
+			var text = $('#url').val() 
+			var json = JSON.stringify({url:text})
+			document.href = "pebblejs:///close#" + json
+			
+		})
+	})
+	 </script>
 </head>
 <body>
 	<h1>Config</h1>
-	<label>URL:</label><input type="text" name="url"></input>
-	<input type="submit"/>
+	
+		<label>URL:</label><input type="text" id="url"></input>
+		<button id="submit"/>
 </body>
 </html>
