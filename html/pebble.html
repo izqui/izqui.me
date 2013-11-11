@@ -6,6 +6,7 @@
 	 <script>
 	$(function (){
 
+		console.log(location.search)
 		$('#submit').click(function (e){
 
 			var text = $('#url').val()
@@ -23,6 +24,6 @@
 	<h1>Config</h1>
 	
 		<label>URL:</label><input type="text" id="url"></input>
-		<button id="submit"/>
+		<button id="submit">Submit</button>
 </body>
 </html>
