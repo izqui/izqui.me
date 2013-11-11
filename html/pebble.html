@@ -6,7 +6,9 @@
 	 <script>
 	$(function (){
 
-		console.log(location.search)
+		var val = window.location.hash.replace('#', '')
+		$('#url').val(val)
+		
 		$('#submit').click(function (e){
 
 			var text = $('#url').val()
