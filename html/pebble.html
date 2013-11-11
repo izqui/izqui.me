@@ -8,9 +8,9 @@
 
 		$('#submit').click(function (e){
 
-			var text = $('#url').val() 
+			var text = $('#url').val()
 			var json = JSON.stringify({url:text})
-			location.href = "pebblejs://close#"
+			location.href = "pebblejs://close#"+json
 			
 		})
 	})
