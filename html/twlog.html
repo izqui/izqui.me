@@ -6,7 +6,7 @@
 	<script type="text/javascript">
 	$(function (){
 
-		$('#hello').text(window.location.hash)
+		$('#hello').text('Hello '+window.location.hash.replace('#', '@'))
 		$('#logout').click(function(){
 
 			document.location = 'pebblejs://close#{"logout":true}'
