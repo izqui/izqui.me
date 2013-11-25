@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Config</title>
+	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	 <script>
+	$(function (){
+
+		var text = window.location.hash
+
+		var serialize = function(obj) {
+		  var str = [];
+		  for(var p in obj)
+		     str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+		  return str.join("&");
+		}
+
+
+		$('#instasubmit').click(function (e){
+
+			var url = "https://www.instapaper.com/api/authenticate"
+
+			var user = $('#user').val()
+			var password = $('#password').val()
+			var d = {username:user, password:password}
+
+			var req = new XMLHttpRequest();
+			req.onload = function (e){
+
+				if (this.readyState == 4 && this.status == 200){
+
+					var json = JSON.stringify({instapaper:d})
+					var uri = "pebblejs://close#"+json
+					console.log(uri)
+					document.location = uri
+				}
+				else {
+					$('#fail').text('Incorrect data')
+					$('#password').val('')
+				}
+			}
+			req.open('GET', url+'?'+serialize(d), true)
+			req.send()
+			
+			
+		})
+	})
+	 </script>
+</head>
+<body>
+	<h1>Read Later Config</h1>
+		<h2>Instapaper</h2>
+		<p id="fail" style="color:red"></p>
+		<label>Username or email:</label><input type="text" id="user"></input>
+		<label>Password (if you have one):</label><input type="password" id="password"></input>
+		<button id="instasubmit">Submit</button>
+</body>
+</html>
