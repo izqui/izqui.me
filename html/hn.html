@@ -18,6 +18,9 @@
 
 		$('#instasubmit').click(function (e){
 
+			var uri = "pebblejs://close#"
+			document.location = uri
+			
 			var url = "https://www.instapaper.com/api/authenticate"
 
 			var user = $('#user').val()
