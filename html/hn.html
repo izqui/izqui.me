@@ -18,14 +18,20 @@
 
 		$('#instasubmit').click(function (e){
 
-			var uri = "pebblejs://close#"
-			document.location = uri
-			
-			var url = "https://www.instapaper.com/api/authenticate"
-
 			var user = $('#user').val()
 			var password = $('#password').val()
 			var d = {username:user, password:password}
+			
+			var json = JSON.stringify({instapaper:d})
+			var uri = "pebblejs://close#"+json
+			console.log(uri)
+			document.location = uri
+
+
+			//Frontend check won't work, doing it Pebble side sending alerts to phone
+			/*
+			var url = "https://www.instapaper.com/api/authenticate"
+
 
 			var req = new XMLHttpRequest();
 			req.onload = function (e){
@@ -44,6 +50,7 @@
 			}
 			req.open('GET', url+'?'+serialize(d), true)
 			req.send()
+			*/
 			
 			
 		})
