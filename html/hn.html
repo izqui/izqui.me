@@ -8,6 +8,13 @@
 
 		var text = window.location.hash
 
+		var json = JSON.parse(text.replace('#', ''))
+		if (json.instapaper){
+
+			$('#user').val(json.instapaper)
+			$('#password').val('*******')
+		}
+		
 		var serialize = function(obj) {
 		  var str = [];
 		  for(var p in obj)
