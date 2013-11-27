@@ -11,8 +11,8 @@
 		var json = JSON.parse(decodeURIComponent(text.replace('#', '')))
 		if (json.instapaper){
 
-			$('#user').val(json.instapaper)
-			$('#password').val('*******')
+			$('#user').val(json.instapaper.username)
+			$('#password').val(json.instapaper.password)
 		}
 
 		var serialize = function(obj) {
