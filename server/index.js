@@ -17,6 +17,7 @@ app.use('/static',express.static(path.join(__dirname, '..', 'public')));
 app.use('/api', express.static(path.join(__dirname, '..', 'content')));
 app.use('/images', express.static(path.join(__dirname, '..', 'images')))
 app.use('/html', express.static(path.join(__dirname, '..', 'html')));
+app.use('/files', express.static(path.join(__dirname, '..', 'files')));
 app.use(express.favicon(path.join(__dirname, '..', 'public', 'fav.ico')))
 
 app.use(app.router);
