@@ -2,6 +2,7 @@
 var env = process.argv[2] || 'dev';
 process.env.NODE_ENV = ((env == 'prod') ? 'production' : 'development');
 
+
 //Database setup
 var mongoose = require('mongoose'),
 	model = require('./model')
