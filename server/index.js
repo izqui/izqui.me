@@ -17,7 +17,6 @@ app.use('/static',express.static(path.join(__dirname, '..', 'public')));
 app.use('/api', express.static(path.join(__dirname, '..', 'content')));
 app.use('/images', express.static(path.join(__dirname, '..', 'images')))
 app.use('/html', express.static(path.join(__dirname, '..', 'html')));
-app.use('/files', express.static(path.join(__dirname, '..', 'files')));
 app.use('/twebble', express.static(path.join(__dirname, '..', 'twebble')));
 app.use(express.favicon(path.join(__dirname, '..', 'public', 'fav.ico')))
 
@@ -39,7 +38,7 @@ app.get('/r', api.redirecter)
 app.get('/redirectees', api.redirectees)
 
 app.get('/:lang',middleware.phone, api.root)
-
+app.get('/files/:path', api.file)
 //Messaging
 app.get('/api/messages', middleware.json, middleware.messagesKeyRequired, api.getMessages)
 app.post('/api/message', middleware.json, api.sendMessage)
