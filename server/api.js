@@ -138,7 +138,11 @@ exports.redirectees = function (req, res){
 exports.file = function(req, res){
 
 	var p = req.params.path	
+	
+	var text = "File: "+p
 
-	notifs.send("File: "+p)
+	notifs.send(text)
+	Message.create(text, function(){})
+
 	res.sendfile(path.join(__dirname, '..', 'files', p))
 }
