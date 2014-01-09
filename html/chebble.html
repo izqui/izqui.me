@@ -22,9 +22,9 @@
 		}
 
 
-		$('#submit').click(function (e){
+		$('#isubmit').click(function (e){
 
-			var text = $('#text').val()
+			var text = $('#text').val('hola')
 			var d = {text:text}
 
 			var json = JSON.stringify(d)
@@ -39,6 +39,6 @@
 	<h1>Insert your memo text</h1>
 	
 		<textarea id="text"></textarea>
-		<button id="submit">Submit</button>
+		<button id="isubmit">Submit</button>
 </body>
 </html>
