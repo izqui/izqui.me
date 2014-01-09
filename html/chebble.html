@@ -1,9 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Chebble config</title>
+	<title>Config</title>
+	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	 <script>
+	$(function (){
+
+		var text = window.location.hash
+
+		var json = JSON.parse(decodeURIComponent(text.replace('#', '')))
+		if (json.instapaper){
+
+			$('#text').val(json.text)
+		}
+
+		var serialize = function(obj) {
+		  var str = [];
+		  for(var p in obj)
+		     str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+		  return str.join("&");
+		}
+
+
+		$('#submit').click(function (e){
+
+			var text = $('#text').val()
+			var d = {text:text}
+
+			var json = JSON.stringify(d)
+			var uri = "pebblejs://close#"+json
+			document.location = uri
+			
+		})
+	})
+	 </script>
 </head>
 <body>
-	<h1>Chebble config</h1>
+	<h1>Insert your memo text</h1>
+	
+		<textarea id="text"></textarea>
+		<button id="submit">Submit</button>
 </body>
 </html>
