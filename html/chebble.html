@@ -48,6 +48,14 @@
           document.location = location;
         });
 
+        var text = window.location.hash
+
+		var json = JSON.parse(decodeURIComponent(text.replace('#', '')))
+		if (json.text){
+
+			$("#text").val(json.text)
+		}
+
       });
     </script>
   </body>
