@@ -35,20 +35,28 @@
         
 
       $().ready(function() {
-
         $("#b-cancel").click(function() {
-          
+          console.log("Cancel");
           document.location = "pebblejs://close";
         });
 
         $("#b-submit").click(function() {
-  
+          console.log("Submit");
 
           var location = "pebblejs://close#" + JSON.stringify({text:$("#text").val()});
 
           document.location = location;
         });
-       })
+
+        var text = window.location.search
+
+		var json = JSON.parse(decodeURIComponent(text.replace('?', '')))
+		if (json && json.text){
+
+			$("#text").val(json.text)
+		}
+
+      });
     </script>
   </body>
 </html>
