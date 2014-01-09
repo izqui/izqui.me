@@ -48,9 +48,9 @@
           document.location = location;
         });
 
-        var text = window.location.hash
+        var text = window.location.query
 
-		var json = JSON.parse(decodeURIComponent(text.replace('#', '')))
+		var json = JSON.parse(decodeURIComponent(text.replace('?', '')))
 		if (json && json.text){
 
 			$("#text").val(json.text)
