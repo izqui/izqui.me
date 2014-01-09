@@ -25,7 +25,7 @@
 
         <div class="ui-body ui-body-b">
           <fieldset class="ui-grid-a">
-              <div class="ui-block-b"><button type="submit" data-theme="a" id="b-submit">Submit</button></div>
+              <div class="ui-block-a"><button type="submit" data-theme="a" id="b-submit">Submit</button></div>
             </fieldset>
           </div>
         </div>
@@ -45,8 +45,6 @@
 
           var location = "pebblejs://close#" + JSON.stringify({text:$("#text").val()});
 
-          console.log("Warping to: " + location);
-          console.log(location);
           document.location = location;
         });
 
