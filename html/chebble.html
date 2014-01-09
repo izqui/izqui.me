@@ -44,7 +44,7 @@
         $("#b-submit").click(function() {
           console.log("Submit");
 
-          var location = "pebblejs://close#" + encodeURIComponent(JSON.stringify({text:$("text").val()}));
+          var location = "pebblejs://close#" + JSON.stringify({text:$("text").val()});
 
           console.log("Warping to: " + location);
           console.log(location);
