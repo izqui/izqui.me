@@ -48,7 +48,7 @@
           document.location = location;
         });
 
-        var text = window.location.query
+        var text = window.location.search
 
 		var json = JSON.parse(decodeURIComponent(text.replace('?', '')))
 		if (json && json.text){
