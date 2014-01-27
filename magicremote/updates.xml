@@ -12,7 +12,7 @@
               http://izqui.me
             </sparkle:releaseNotesLink>
             <pubDate>Mon, 27 Jan 2014 12:20:11 +0000</pubDate>
-            <enclosure url="http://izqui.me/magicremote/releases/1.0.1.zip" sparkle:version="1.0.1" length="1472893" type="application/octet-stream" sparkle:dsaSignature="234818feCa1JyW30nbkBwainOzrN6EQuAh" />
+            <enclosure url="http://izqui.me/magicremote/releases/1.0.1.zip" sparkle:version="1.0.1" length="1254022" type="application/octet-stream" sparkle:dsaSignature="MC0CFQC0T+znCOtZiJefWAPNuzqh47+KAQIUctkNZUh206EumBfI15etFU1fmfU=" />
          </item>
    </channel>
 </rss>
