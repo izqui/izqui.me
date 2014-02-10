@@ -5,7 +5,14 @@
       <link>http://izqui.me/magicremote/updates.xml</link>
       <description>Most recent changes with links to updates.</description>
       <language>en</language>
-  
+         <item>
+            <title>Version 0.0.8</title>
+            <sparkle:releaseNotesLink>
+              http://izqui.me
+            </sparkle:releaseNotesLink>
+            <pubDate>Mon, 27 Jan 2014 12:20:11 +0000</pubDate>
+            <enclosure url="http://izqui.me/magicremote/releases/0.0.8.zip" sparkle:version="0.0.8" length="1255096" type="application/octet-stream" sparkle:dsaSignature="MCwCFFOrMzcT/XLUz8EHSbcx5t9kHkiuAhQ+QL9eVvk3RFckrZJ7HNqLZZnd+g==" />
+         </item>
          <!--<item>
             <title>Version 1.0.1 (Whatever)</title>
             <sparkle:releaseNotesLink>
