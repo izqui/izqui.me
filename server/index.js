@@ -18,7 +18,7 @@ app.use('/api', express.static(path.join(__dirname, '..', 'content')));
 app.use('/images', express.static(path.join(__dirname, '..', 'images')))
 app.use('/html', express.static(path.join(__dirname, '..', 'html')));
 app.use('/twebble', express.static(path.join(__dirname, '..', 'twebble')));
-app.use('/magicremote', express.static(path.join(__dirname, '..', 'magicremote')));
+//app.use('/magicremote', express.static(path.join(__dirname, '..', 'magicremote'))); NOW REDIRECTING
 app.use(express.favicon(path.join(__dirname, '..', 'public', 'fav.ico')))
 
 app.use(app.router);
@@ -38,11 +38,15 @@ app.get('/api/images', middleware.json, api.images)
 app.get('/r', api.redirecter)
 app.get('/redirectees', api.redirectees)
 
-app.get('/:lang',middleware.phone, api.root)
-app.get('/files/:path', api.file)
-//Messaging
 app.get('/api/messages', middleware.json, middleware.messagesKeyRequired, api.getMessages)
 app.post('/api/message', middleware.json, api.sendMessage)
+
+app.get('/magicremote', api.magicremote)
+app.get('/magicremote/*', api.magicremote)
+
+app.get('/files/:path', api.file)
+
+app.get('/:lang',middleware.phone, api.root)
 
 
 

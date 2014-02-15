@@ -146,3 +146,12 @@ exports.file = function(req, res){
 
 	res.sendfile(path.join(__dirname, '..', 'files', p))
 }
+
+exports.magicremote = function(req, res){
+
+	var base = config.magicremote
+
+	if (req.params[0]) base += '/'+req.params[0]
+
+	res.redirect(base)
+}
