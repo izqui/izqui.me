@@ -43,6 +43,7 @@
 	"projects":[
 		{
 			"name":"Twebble",
+			"description":"A full-featured Twitter client for Pebble.",
 			"version":"1.0",
 			"launched":"2013",
 			"active":false,
@@ -51,6 +52,7 @@
 		},
 		{
 			"name":"Cardwee",
+			"description":"A loyalty cards system for small businesses.",
 			"launched":2013,
 			"active":false,
 			"website":"http://cardwee.com",
@@ -58,6 +60,7 @@
 		},
 		{
 			"name":"Showy",
+			"description":"A very bautiful TV Show tracking app",
 			"version":"2.0",
 			"launched":"2012",
 			"active":false,
@@ -66,6 +69,7 @@
 		},
 		{
 			"name":"A++genda",
+			"description":"An agenda made for students, by students",
 			"version":"2.0",
 			"launched":"2011",
 			"active":false,
@@ -74,6 +78,7 @@
 		},
 		{
 			"name":"uRlate",
+			"description":"Never be looked bad when you arrive late", 
 			"version":"1.1",
 			"launched":"2011",
 			"active":false,
