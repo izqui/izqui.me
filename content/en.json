@@ -36,26 +36,31 @@
 		"latitude":40.4000,
 		"longitude":-3.6833,
 		"city":"Madrid",
-		"country":"Europe"
+		"country":"Spain"
 	},
 	
 	"role":"iOS & Web Developer",
-	"employment":{
-
-		"position":"CTO",
-		"founder":true,
-		"company":"Cardwee",
-		"website":"http://cardwee.com",
-		"team":["Luis Ivan Cuende (@licuende)", "Néstor Palao (@menpalapps)", "(Former) Danny Saltaren (@dsaltaren)"]
-	},
-	"availableForWork":false,
 	"projects":[
-
+		{
+			"name":"Twebble",
+			"version":"1.0",
+			"launched":"2013",
+			"active":false,
+			"website":"http://izqui.me/twebble",
+			"team":[]
+		},
+		{
+			"name":"Cardwee",
+			"launched":2013,
+			"active":false,
+			"website":"http://cardwee.com",
+			"team":["Luis Ivan Cuende (@licuende)", "Néstor Palao (@menpalapps)", "(Former) Danny Saltaren (@dsaltaren)"]
+		},
 		{
 			"name":"Showy",
 			"version":"2.0",
 			"launched":"2012",
-			"active":true,
+			"active":false,
 			"website":"http://showyapp.com",
 			"team":["Jose Cruz (@jcruzmac)"]
 		},
@@ -82,7 +87,7 @@
 			"course":"Baccalaureate (Senior High School)",
 			"time":"2013-",
 			"currentStatus":true,
-			"grade":"undefined",
+			"currentGrade":"9.45/10",
 			"location":"Madrid"
 
 		},

@@ -36,20 +36,26 @@
 		"latitud":40.4000,
 		"longitud":-3.6833,
 		"ciudad":"Madrid",
-		"país":"Europe"
+		"país":"España"
 	},
 	
 	"role":"iOS & Web Developer",
-	"trabajo":{
-
-		"posición":"CTO",
-		"fundador":true,
-		"empresa":"Cardwee",
-		"web":"http://cardwee.com",
-		"equipo":["Luis Ivan Cuende (@licuende)", "Néstor Palao (@menpalapps)", "(Former) Danny Saltaren (@dsaltaren)"]
-	},
-	"disponibleParaTrabjos":false,
 	"proyectos":[
+		{
+			"nombre":"Twebble",
+			"version":"1.0",
+			"lanzado":"2013",
+			"active":false,
+			"web":"http://izqui.me/twebble",
+			"equipo":[]
+		},
+		{
+			"nombre":"Cardwee",
+			"lanzado":2013,
+			"active":false,
+			"web":"http://cardwee.com",
+			"equipo":["Luis Ivan Cuende (@licuende)", "Néstor Palao (@menpalapps)", "(Former) Danny Saltaren (@dsaltaren)"]
+		},
 
 		{
 			"nombre":"Showy",
