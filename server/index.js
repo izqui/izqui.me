@@ -18,6 +18,7 @@ app.use('/api', express.static(path.join(__dirname, '..', 'content')));
 app.use('/images', express.static(path.join(__dirname, '..', 'images')))
 app.use('/html', express.static(path.join(__dirname, '..', 'html')));
 app.use('/twebble', express.static(path.join(__dirname, '..', 'twebble')));
+app.use('/cmc', express.static(path.join(__dirname, '..', 'cmc')));
 //app.use('/magicremote', express.static(path.join(__dirname, '..', 'magicremote'))); NOW REDIRECTING
 app.use(express.favicon(path.join(__dirname, '..', 'public', 'fav.ico')))
 
