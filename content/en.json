@@ -42,11 +42,20 @@
 	"role":"iOS & Web Developer",
 	"projects":[
 		{
+			"name":"Magic Remote",
+			"description":"Control all your mac apps with your iPhone",
+			"version":"1.0",
+			"launched":"2014",
+			"active":false,
+			"website":"http://magicremote.co",
+			"team":[]
+		},
+		{
 			"name":"Twebble",
 			"description":"A full-featured Twitter client for Pebble.",
-			"version":"1.0",
+			"version":"1.0.1",
 			"launched":"2013",
-			"active":false,
+			"active":true,
 			"website":"http://izqui.me/twebble",
 			"team":[]
 		},
