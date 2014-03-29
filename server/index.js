@@ -49,6 +49,11 @@ app.get('/files/:path', api.file)
 
 app.get('/:lang',middleware.phone, api.root)
 
+//Keybase
+app.get('/.well-known/keybase.txt', function (req, res){
+	
+	res.redirect('/files/keybase.txt')
+})
 
 
 module.exports = exports = app
