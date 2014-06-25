@@ -155,3 +155,8 @@ exports.magicremote = function(req, res){
 
 	res.redirect(base)
 }
+exports.taylor = function(req, res){
+
+        res.redirect("http://github.com/izqui/taylor")
+}
+

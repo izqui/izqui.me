@@ -44,6 +44,8 @@ app.get('/redirectees', api.redirectees)
 app.get('/api/messages', middleware.json, middleware.messagesKeyRequired, api.getMessages)
 app.post('/api/message', middleware.json, api.sendMessage)
 
+app.get('/taylor', api.taylor)
+
 app.get('/magicremote', api.magicremote)
 app.get('/magicremote/*', api.magicremote)
 
