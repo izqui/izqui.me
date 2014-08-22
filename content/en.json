@@ -15,11 +15,6 @@
 			"url":"http://twitter.com/izqui9"
 		},
 		{
-			"service":"app.net",
-			"username":"ji",
-			"url":"http://alpha.app.net/ji"
-		},
-		{
 			"service":"Github",
 			"username":"izqui",
 			"url":"http://github.com/izqui"
@@ -29,7 +24,6 @@
 			"username":"izqui9",
 			"url":"http://instagram.com/izqui9"
 		}
-
 	],
 	"location":{
 
@@ -98,15 +92,21 @@
 	],
 	"studies":[
 		{
+			"course":"Hacker School",
+			"time":"Summer 2014",
+			"currentStatus":false,
+			"location":"New York City"
+		},
+		{
 			"course":"Baccalaureate (Senior High School)",
-			"time":"2013-",
+			"time":"2013-2015",
 			"currentStatus":true,
 			"currentGrade":"9.45/10",
 			"location":"Madrid"
 
 		},
 		{
-			"course":"ESO (Junior High School)",
+			"course":"ESO (Middle High School)",
 			"time":"2009-2013",
 			"currentStatus":false,
 			"grade":"9.3/10",

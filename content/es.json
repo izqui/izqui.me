@@ -15,11 +15,6 @@
 			"url":"http://twitter.com/izqui9"
 		},
 		{
-			"servicio":"app.net",
-			"usuario":"ji",
-			"url":"http://alpha.app.net/ji"
-		},
-		{
 			"servicio":"Github",
 			"usuario":"izqui",
 			"url":"http://github.com/izqui"
@@ -99,8 +94,14 @@
 	],
 	"estudios":[
 		{
+			"course":"Hacker School",
+			"time":"Summer 2014",
+			"currentStatus":false,
+			"location":"New York City"
+		},
+		{
 			"etapa":"Bachillerato",
-			"fecha":"2013-",
+			"fecha":"2013-2015",
 			"estadoActual":true,
 			"notasActuales":"9.45/10",
 			"ubicación":"Madrid"
