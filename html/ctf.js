@@ -1,1 +1,1 @@
-document.getElementById('logo').outerHTML = "Hacker School!"
+document.getElementById('logo').innerHTML = "Hacker School!"
