@@ -1,1 +1,1 @@
-alert("hi")
+document.getElementById('logo').outerHTML = "Hacker School!"
