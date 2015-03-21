@@ -63,19 +63,16 @@
                 </section>
                 <section>
                     <h2>Swift types</h2>
-                    <pre><code class="swift" data-trim contenteditable style="font-size: 18px;">
-enum Callback { // Looking for a better term
+                    <pre><code class="swift" data-trim contenteditable style="font-size: 18px;">enum Callback { // Looking for a better term
     case Continue(Request, Response)
     case Send(Request, Response)
 }
 
-typealias Handler = (Request, Response, (Callback) -> ()) -> ()
-                    </code></pre>
+typealias Handler = (Request, Response, (Callback) -> ()) -> ()</code></pre>
                 </section>
                 <section>
                     <h2>Handler example</h2>
-                    <pre><code class="swift" data-trim contenteditable style="font-size: 18px;">
-let printer: (String) -> () = println
+                    <pre><code class="swift" data-trim contenteditable style="font-size: 18px;">let printer: (String) -> () = println
 
 let requestLogger: Handler = {
     request, response, callback in
@@ -88,14 +85,12 @@ let requestLogger: Handler = {
     printer(text)
                         
     callback(.Continue(request, response))
-}
-                    </code></pre>
+}</code></pre>
                 </section>
                 
                 <section>
                     <h2>Routes</h2>
                     <pre><code class="swift" data-trim contenteditable style="font-size: 18px;">class Router {
-                    
     var routes: [Route]
     func handler() -> Handler
 }</code></pre>
