@@ -205,12 +205,12 @@ server.post("/image", Taylor.Middleware.bodyParser(), {
                               
                               // Optional reveal.js plugins
                               dependencies: [
-                                             { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-                                             { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                                             { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                                             { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-                                             { src: 'plugin/zoom-js/zoom.js', async: true },
-                                             { src: 'plugin/notes/notes.js', async: true }
+                                             { src: 'swiftsummit/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                             { src: 'swiftsummit/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                             { src: 'swiftsummit/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                             { src: 'swiftsummit/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                                             { src: 'swiftsummit/plugin/zoom-js/zoom.js', async: true },
+                                             { src: 'swiftsummit/plugin/notes/notes.js', async: true }
                                              ]
                               });
                               
