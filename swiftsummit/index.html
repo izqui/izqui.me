@@ -94,22 +94,16 @@ let requestLogger: Handler = {
                 
                 <section>
                     <h2>Routes</h2>
-                    <pre><code class="swift" data-trim contenteditable style="font-size: 18px;">
-class Router {
+                    <pre><code class="swift" data-trim contenteditable style="font-size: 18px;">class Router {
                     
     var routes: [Route]
     func handler() -> Handler
-}
-                    </code></pre>
-<pre><code class="swift" data-trim contenteditable style="font-size: 18px;">
-func post(p: String, _ c: Handler...) {
-                    
+}</code></pre>
+<pre><code class="swift" data-trim contenteditable style="font-size: 18px;">func post(p: String, _ c: Handler...) {      
     self.router.addRoute(Route(m: .POST, path: p, handlers: c))
-}
-</code></pre>
+}</code></pre>
                     
-                    <pre><code class="swift" data-trim contenteditable style="font-size: 18px;">
-server.post("/hi/:name", Taylor.Middleware.bodyParser(), {
+                    <pre><code class="swift" data-trim contenteditable style="font-size: 18px;">server.post("/hi/:name", Taylor.Middleware.bodyParser(), {
     request, response, callback in
 
     if let name = request.parameters["name"],
@@ -119,8 +113,7 @@ server.post("/hi/:name", Taylor.Middleware.bodyParser(), {
     }
 
     callback(.Send(request, response))
-})
-                    </code></pre>
+})</code></pre>
                 </section>
                 
                 <section>
