@@ -19,6 +19,7 @@ app.use('/images', express.static(path.join(__dirname, '..', 'images')))
 app.use('/html', express.static(path.join(__dirname, '..', 'html')));
 app.use('/twebble', express.static(path.join(__dirname, '..', 'twebble')));
 app.use('/cmc', express.static(path.join(__dirname, '..', 'cmc')));
+app.use('/swiftsummit', express.static(path.join(__dirname, '..', 'swiftsummit')));
 app.use('/aquihaytalento', express.static(path.join(__dirname, '..', 'aquihaytalento')));
 
 //app.use('/magicremote', express.static(path.join(__dirname, '..', 'magicremote'))); NOW REDIRECTING

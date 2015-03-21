@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+            
+            <title>Taylor - Swift Summit</title>
+            
+            <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+                <meta name="author" content="Hakim El Hattab">
+                    
+                    <meta name="apple-mobile-web-app-capable" content="yes" />
+                    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+                    
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+                        
+                        <link rel="stylesheet" href="css/reveal.css">
+                            <link rel="stylesheet" href="css/theme/black.css" id="theme">
+                                
+                                <!-- Code syntax highlighting -->
+                                <link rel="stylesheet" href="lib/css/zenburn.css">
+                                    
+                                    <!-- Printing and PDF exports -->
+                                    <script>
+                                        var link = document.createElement( 'link' );
+                                        link.rel = 'stylesheet';
+                                        link.type = 'text/css';
+                                        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+                                        document.getElementsByTagName( 'head' )[0].appendChild( link );
+                                        </script>
+                                    
+                                    <!--[if lt IE 9]>
+                                     <script src="lib/js/html5shiv.js"></script>
+                                     <![endif]-->
+                                    </head>
+    
+    <body>
+        
+        <div class="reveal">
+            
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>Taylor</h1>
+                    <h3>Perhaps the Most Un-Googleable Swift Library</h3>
+                    <p>
+                    <small>Jorge Izquierdo (@izqui9) - Swift Summit - March 2015</small>
+                    </p>
+                </section>
+                <!---
+                <section>
+                    <img src="https://pbs.twimg.com/profile_images/449256202262704128/KJCvViJI_400x400.png">
+                    <h2>Hacker School</h2>
+                </section>
+                -->
+                <section>
+                    <h2>HTTP/1.1</h2>
+                   <img src="images/http.png">
+                </section>
+                <section>
+                    <h2>Flow</h2>
+                   <img src="images/flow.png">
+                </section>
+                <section>
+                    <h2>Swift types</h2>
+                    <pre><code class="swift" data-trim contenteditable style="font-size: 18px;">
+enum Callback { // Looking for a better term
+    case Continue(Request, Response)
+    case Send(Request, Response)
+}
+
+typealias Handler = (Request, Response, (Callback) -> ()) -> ()
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>Handler example</h2>
+                    <pre><code class="swift" data-trim contenteditable style="font-size: 18px;">
+let printer: (String) -> () = println
+
+let requestLogger: Handler = {
+    request, response, callback in
+    
+    let timeDelta = CACurrentMediaTime()-request.start
+    let timeString = NSString(format: "%.02f", timeDelta*1000)
+    let text = "\(response.statusCode) \(request.method.rawValue)
+    \(request.path) \(timeString)ms"
+                        
+    printer(text)
+                        
+    callback(.Continue(request, response))
+}
+                    </code></pre>
+                </section>
+                
+                <section>
+                    <h2>Routes</h2>
+                    <pre><code class="swift" data-trim contenteditable style="font-size: 18px;">
+class Router {
+                    
+    var routes: [Route]
+    func handler() -> Handler
+}
+                    </code></pre>
+<pre><code class="swift" data-trim contenteditable style="font-size: 18px;">
+func post(p: String, _ c: Handler...) {
+                    
+    self.router.addRoute(Route(m: .POST, path: p, handlers: c))
+}
+</code></pre>
+                    
+                    <pre><code class="swift" data-trim contenteditable style="font-size: 18px;">
+server.post("/hi/:name", Taylor.Middleware.bodyParser(), {
+    request, response, callback in
+
+    if let name = request.parameters["name"],
+       let age = request.body["age"] {
+        
+        response.bodyString = "\(name) is \(age) years old"
+    }
+
+    callback(.Send(request, response))
+})
+                    </code></pre>
+                </section>
+                
+                <section>
+                     <section>
+                    <h1>Play time</h1>
+                    <a href=""><img src="http://fileinfo.com/images/icons/files/128/playground-9516.png"></a>
+                    </section>
+                    <section>
+                        <img src="images/demo1.png">
+                    </section>
+                    <section>
+                        <pre><code class="swift" data-trim contenteditable style="font-size: 18px;">
+server.post("/image", Taylor.Middleware.bodyParser(), {
+    req, res, cb in
+                            
+    if let f = req.body["filter"], let i = f.toInt() {
+                            
+        res.body = filteredImage(filters[(i&lt;filters.count ? i : 0)])
+        res.headers["Content-type"] = "image/jpg"
+    } else {
+
+        res.statusCode = 404
+        res.bodyString = "Filter not found"
+    }
+
+    cb(.Send(req, res))
+})
+                        </code></pre>
+                    </section>
+                    <section>
+                        <img src="images/demo2.png">
+                    </section>
+                    <section>
+                        <img src="images/demo3.png">
+                    </section>
+                </section>
+                <section>
+                    <h2>In conclusion</h2>
+                    <h3 style="text-align:left">Cool things</h3>
+                    <ul style="text-align:left">
+                        <li>Use awesome Apple Frameworks (SceneKit, CoreImage...)</li>
+                        <li>Live code your HTTP server in a Playground</li>
+                    </ul>
+                    <br>
+                    <br>
+                    <br>
+                    <h3 style="text-align:left">Not that cool</h3>
+                    <ul style="text-align:left">
+                        <li style="text-align:left">Only works on (OSX >= 10.9 || iOS >= 7.0)</li>
+                        <li style="color:transparent">HACK wesome Apple Frameworks (SceneKit, CoreImage...)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Credits</h2>
+                    <h3 style="text-align:left">Open Source Components</h3>
+                    <ul style="text-align:left">
+                        <li style="text-align:left"><a href="https://github.com/robbiehanson/CocoaAsyncSocket">CocoaAsyncSocket</a></li>
+                         <li style="color:transparent">HACK wesome Apple Frameworks (SceneKit, CoreImage...)</li>
+                    </ul>
+                    <h3 style="text-align:left">Inspiration</h3>
+                    <ul style="text-align:left">
+                        <li style="text-align:left"><a href="http://expressjs.com">ExpressJS</a></li>
+                        <li style="text-align:left"><a href="http://martini.codegangsta.io">Go's Martini</a></li>
+                         <li style="color:transparent">HACK wesome Apple Frameworks (SceneKit, CoreImage...)</li>
+                    </ul>
+                </section>
+                
+                <section style="text-align: left;">
+                    <h1>THANKS</h1>
+                    <h3>Repo: <a href="https://github.com/izqui/taylor">github.com/izqui/taylor</a></h3>
+                    <h3>Slides: <a href="http://izqui.me/swiftsummit">izqui.me/swiftsummit</a></h3>
+                    <h3>Twitter: <a href="http://twitter.com/izqui9">@izqui9</a></h3><h5></h5>
+                    <h3>Email: <a href="mailto:jorge@izqui.me">jorge@izqui.me</a></h3><h5></h5>
+                </section>
+                
+            </div>
+            
+        </div>
+        
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+        
+        <script>
+            
+            // Full list of configuration options available at:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                              controls: true,
+                              progress: true,
+                              history: true,
+                              center: true,
+                              
+                              transition: 'slide', // none/fade/slide/convex/concave/zoom
+                              
+                              // Optional reveal.js plugins
+                              dependencies: [
+                                             { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                             { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                             { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                             { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                                             { src: 'plugin/zoom-js/zoom.js', async: true },
+                                             { src: 'plugin/notes/notes.js', async: true }
+                                             ]
+                              });
+                              
+            </script>
+        
+    </body>
+</html>
