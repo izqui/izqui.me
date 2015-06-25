@@ -15,7 +15,7 @@ app.use(express.bodyParser());
 app.use(express.methodOverride())
 app.use('/static',express.static(path.join(__dirname, '..', 'public')));
 app.use('/api', express.static(path.join(__dirname, '..', 'content')));
-app.use('/images', express.static(path.join(__dirname, '..', 'images')))
+app.use('/img', express.static(path.join(__dirname, '..', 'img')))
 app.use('/html', express.static(path.join(__dirname, '..', 'html')));
 app.use('/twebble', express.static(path.join(__dirname, '..', 'twebble')));
 app.use('/cmc', express.static(path.join(__dirname, '..', 'cmc')));
@@ -39,11 +39,6 @@ app.get('/', middleware.phone, api.root)
 app.get('/api', api.api)
 app.get('/api/languages', middleware.json, api.languages)
 app.get('/api/images', middleware.json, api.images)
-app.get('/r', api.redirecter)
-app.get('/redirectees', api.redirectees)
-
-app.get('/api/messages', middleware.json, middleware.messagesKeyRequired, api.getMessages)
-app.post('/api/message', middleware.json, api.sendMessage)
 
 app.get('/taylor', api.taylor)
 
@@ -52,6 +47,7 @@ app.get('/magicremote/*', api.magicremote)
 
 app.get('/files/:path', api.file)
 
+app.get('/card', api.passbook)
 app.get('/:lang',middleware.phone, api.root)
 
 //Keybase

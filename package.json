@@ -9,6 +9,7 @@
     "express": "3.3.4",
     "jade": "*",
     "apn":"*",
-    "mongoose":"*"
+    "mongoose":"*",
+    "passbook": "^2.0.2"
   }
 }

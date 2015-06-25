@@ -3,10 +3,9 @@ var fs = require('fs'),
 	jsonP = require('../helpers/json'),
 	config = require('../config'),
 	mongoose = require('mongoose'),
-	notifs = require('../helpers/notifs')
+	notifs = require('../helpers/notifs'),
+	passbook = require('passbook')
 
-var Redirect = mongoose.model('Redirect'),
-	Message = mongoose.model('Message')
 
 exports.root = function (req, res){
 
@@ -24,7 +23,7 @@ exports.root = function (req, res){
 		if (err) res.send(500)
 		else {
 
-			fs.readdir(path.join(__dirname, '..', 'images'), function (err, files){
+			fs.readdir(path.join(__dirname, '..', 'img'), function (err, files){
 
 				var json = JSON.parse(f.toString())
 
@@ -34,13 +33,50 @@ exports.root = function (req, res){
 
 					var file = files[i]
 					var name = file.slice(0, file.indexOf('.'))
-					json.images[name] = ((process.env.NODE_ENV == 'production') ? config.base:'http://localhost:3000/')+'images/'+file
+					json.images[name] = ((process.env.NODE_ENV == 'production') ? config.base:'http://localhost:8080/')+'img/'+file
 				}
 
 				var pretty = JSON.stringify(json, null, 2)
 				res.render('index', {json:json, pretty:jsonP.prettify(pretty), image:config.image, lang:lang})
 			})
 		}	
+	})
+}
+
+exports.passbook = function (req, res) {
+
+	var template = passbook("generic", {
+		passTypeIdentifier: "pass.me.yzl.coupon",
+		teamIdentifier: "72RF4L6QZW",
+		organizationName: "Jorge Izquierdo",
+		backgroundColor: "rgb(90,177,166)",
+		foregroundColor: "rgb(255,255,255)",
+		labelColor: "rgb(255,255,255)",
+		relavantDate: new Date(Date.now() + 1000*3600*24).toString()
+	})
+	template.keys(path.join(__dirname, "keys"), "hola")
+	template.loadImagesFrom(path.join(__dirname, "images"))
+
+	var pass = template.createPass({
+		serialNumber: "123",
+		description:"Hey there",
+		suppressStripShine: true,
+		barcode: {format: "PKBarcodeFormatPDF417", message:"http:/izqui.me/card", messageEncoding: "iso-8859-1"}
+	})
+
+	pass.headerFields.add("name", "", "Business card")
+	pass.primaryFields.add("name", "", "Jorge Izquierdo", {textAlignment: "PKTextAlignmentLeft"})
+	pass.secondaryFields.add("email", "EMAIL", "jorge@izqui.me", {textAlignment: "PKTextAlignmentLeft"})
+	pass.secondaryFields.add("phone", "PHONE", "+34 628 151 894", {textAlignment: "PKTextAlignmentRight"})
+	pass.auxiliaryFields.add("twitter", "TWITTER", "@izqui9", {textAlignment: "PKTextAlignmentLeft"})
+	pass.auxiliaryFields.add("web", "WEBSITE", "http://izqui.me", {textAlignment: "PKTextAlignmentRight"})
+	pass.backFields.add("phone", "Mobile phone", "+34 628 151 894")
+	pass.backFields.add("cv", "Curriculum vitae", "http://izqui.me/files/cv.pdf")
+	
+	pass.render(res, function (err){
+		if (err){
+			console.log(err)
+		}
 	})
 }
 
@@ -68,71 +104,19 @@ exports.languages = function (req, res){
 
 exports.images = function (req, res){
 
-	fs.readdir(path.join(__dirname, '..', 'images'), function (err, files){
+	fs.readdir(path.join(__dirname, '..', 'img'), function (err, files){
 
 		var json = {images:{}}
 		for (var i in files){
 
 			var file = files[i]
 			var name = file.slice(0, file.indexOf('.'))
-			json.images[name] = ((process.env.NODE_ENV == 'prod') ? config.base:'http://localhost:3000/')+'images/'+file
+			json.images[name] = ((process.env.NODE_ENV == 'prod') ? config.base:'http://localhost:3000/')+'img/'+file
 		}
 
 		res.send(json)
 
 	})
-}
-
-exports.sendMessage = function (req, res){
-
-	var text = req.body.text;
-
-	if (text){
-
-		notifs.send(text);
-		Message.create(text, function (err){
-
-			if (err) res.send(500)
-			else res.send(200, JSON.stringify({'status':'sent'}))
-		})
-		
-	}
-
-	else {
-
-		res.send(400, JSON.stringify({'error':'no text'}))
-	}
-}
-
-exports.getMessages = function (req, res){
-
-	Message.find({}).limit(40).select('date text').sort('-date').exec(function (err, ms){
-
-		res.send(ms)
-	})
-}
-
-exports.redirecter = function (req, res){
-
-	var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress
-	var ua = req.headers['user-agent']
-	var red = config.redirects[parseInt(req.query.r)] || config.redirects[0]
-
-	Redirect.create(red, ip, ua, function (err){
-
-		res.redirect(red)
-		notifs.send('Visit from '+ip+' to '+red)
-	})
-	
-}
-
-exports.redirectees = function (req, res){
-
-	Redirect.find({}).select('-_id').sort('date').exec(function (err, rs){
-
-		res.render('redirectees', {json:{name:'Red'}, rs:rs})
-	})
-
 }
 
 exports.file = function(req, res){
@@ -142,7 +126,6 @@ exports.file = function(req, res){
 	var text = "File: "+p
 
 	notifs.send(text)
-	Message.create(text, function(){})
 
 	res.sendfile(path.join(__dirname, '..', 'files', p))
 }
