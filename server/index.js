@@ -46,6 +46,8 @@ app.get('/magicremote', api.magicremote)
 app.get('/magicremote/*', api.magicremote)
 
 app.get('/files/:path', api.file)
+app.get('/passes/:path', api.pass)
+
 
 app.get('/card', api.passbook)
 app.get('/:lang',middleware.phone, api.root)

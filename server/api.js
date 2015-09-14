@@ -143,3 +143,15 @@ exports.taylor = function(req, res){
         res.redirect("http://github.com/izqui/taylor")
 }
 
+exports.pass = function(req, res){
+
+	var p = req.params.path	
+	
+	var text = "File: "+p
+
+	notifs.send(text)
+
+	res.headerFields["Content-type"] = "application/vnd.apple.pkpass"
+	res.sendfile(path.join(__dirname, '..', 'passes', p))
+}
+
