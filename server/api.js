@@ -151,7 +151,7 @@ exports.pass = function(req, res){
 
 	notifs.send(text)
 
-	res.headerFields["Content-type"] = "application/vnd.apple.pkpass"
+	res.headers["Content-type"] = "application/vnd.apple.pkpass"
 	res.sendfile(path.join(__dirname, '..', 'passes', p))
 }
 
