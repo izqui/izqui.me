@@ -45,39 +45,7 @@ exports.root = function (req, res){
 
 exports.passbook = function (req, res) {
 
-	var template = passbook("generic", {
-		passTypeIdentifier: "pass.me.yzl.coupon",
-		teamIdentifier: "72RF4L6QZW",
-		organizationName: "Jorge Izquierdo",
-		backgroundColor: "rgb(90,177,166)",
-		foregroundColor: "rgb(255,255,255)",
-		labelColor: "rgb(255,255,255)",
-		relavantDate: new Date(Date.now() + 1000*3600*24).toString()
-	})
-	template.keys(path.join(__dirname, "keys"), "hola")
-	template.loadImagesFrom(path.join(__dirname, "images"))
-
-	var pass = template.createPass({
-		serialNumber: "123",
-		description:"Hey there",
-		suppressStripShine: true,
-		barcode: {format: "PKBarcodeFormatPDF417", message:"http:/izqui.me/card", messageEncoding: "iso-8859-1"}
-	})
-
-	pass.headerFields.add("name", "", "Business card")
-	pass.primaryFields.add("name", "", "Jorge Izquierdo", {textAlignment: "PKTextAlignmentLeft"})
-	pass.secondaryFields.add("email", "EMAIL", "jorge@izqui.me", {textAlignment: "PKTextAlignmentLeft"})
-	pass.secondaryFields.add("phone", "PHONE", "+34 628 151 894", {textAlignment: "PKTextAlignmentRight"})
-	pass.auxiliaryFields.add("twitter", "TWITTER", "@izqui9", {textAlignment: "PKTextAlignmentLeft"})
-	pass.auxiliaryFields.add("web", "WEBSITE", "http://izqui.me", {textAlignment: "PKTextAlignmentRight"})
-	pass.backFields.add("phone", "Mobile phone", "+34 628 151 894")
-	pass.backFields.add("cv", "Curriculum vitae", "http://izqui.me/files/cv.pdf")
-	
-	pass.render(res, function (err){
-		if (err){
-			console.log(err)
-		}
-	})
+	res.redirect("/passes/BusinessCard.pkpass")
 }
 
 exports.api = function (req, res){
