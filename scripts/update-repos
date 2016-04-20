@@ -5,7 +5,8 @@ echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
 cd themes/hugo-identity-theme
 
-git commit -am "Theme update caused by repo push"
+git add -A
+git commit -m "Theme update caused by repo push"
 git push origin master
 
 cd ../..
