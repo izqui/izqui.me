@@ -1,7 +1,0 @@
-API
-===
-
-*Content: GET /api/[lang].json E.g.: http://izqui.me/api/en.json
-*Images: GET /api/images E.g.: http://izqui.me/api/images
-*Languages: GET  /api/languages E.g: http://izqui.me/api/languages
-*Messages: POST /api/message (Send my iPhone a message ;))
