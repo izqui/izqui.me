@@ -64,10 +64,7 @@ html {
 body {
   height: 100%;
   background-color: #ffffff;
-  background-image: url("images/overlay.png"), url("../../images/bg.jpg");
-  background-image: url("images/overlay.png"), url("../../images/bg.jpg");
-  background-image: url("images/overlay.png"), url("../../images/bg.jpg");
-  background-image: url("images/overlay.png"), url("../../images/bg.jpg");
+  background-image: url("images/overlay.png");
   background-repeat: repeat,			no-repeat,			no-repeat;
   background-size: 100px 100px,	cover,				cover;
   background-position: top left,		center center,		bottom center;
@@ -83,10 +80,7 @@ body {
     opacity: 0;
     z-index: 1;
     background-color: #ffffff;
-    background-image: url("images/overlay.png"));
-    background-image: url("images/overlay.png"));
-    background-image: url("images/overlay.png"));
-    background-image: url("images/overlay.png"));
+    background-image: url("images/overlay.png");
     background-repeat: repeat,			no-repeat;
     background-size: 100px 100px,	cover;
     background-position: top left,		center center;
@@ -370,7 +364,7 @@ ol {
 ul {
   list-style: disc;
   margin: 0 0 1.5em 0;
-  padding-left: 1em; }
+  padding-left: 0em; }
   ul li {
     padding-left: 0.5em; }
   ul.alt {
@@ -436,7 +430,7 @@ ul {
     padding-left: 0; }
     ul.actions li {
       display: inline-block;
-      padding: 0 0.75em 0 0;
+      padding: 0 0em 0 0;
       vertical-align: middle; }
       ul.actions li:last-child {
         padding-right: 0; }
@@ -604,7 +598,7 @@ button,
     list-style: none; }
     #footer .copyright li {
       display: inline-block;
-      margin: 0 0 0 0.45em;
+      margin: 0 0 0 0.2em;
       padding: 0 0 0 0.85em;
       border-left: solid 1px rgba(255, 255, 255, 0.5);
       line-height: 1; }
