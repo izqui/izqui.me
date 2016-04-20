@@ -73,11 +73,15 @@ googleAnalytics = "UA-76689321-1"
 		icon = "fa-twitter"
 		link = "https://twitter.com/izqui9"
 
-
 	[[params.social]]
 		title = "Instagram"
 		icon = "fa-instagram"
 		link = "https://instagram.com/izqui9"
+
+	[[params.social]]
+		title = "Linked In"
+		icon = "fa-linkedin"
+		link = "https://linkedin.com/izqui"
 
 	# Footer settings
 	[params.footer]
