@@ -2,8 +2,6 @@
 
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
-# Build the project.
-hugo # if using a theme, replace by `hugo -t <yourtheme>`
 
 cd themes/hugo-identity-theme
 
@@ -11,6 +9,9 @@ git commit -am "Theme update caused by repo push"
 git push origin master
 
 cd ../..
+
+# Build the project.
+hugo # if using a theme, replace by `hugo -t <yourtheme>`
 
 # Go To Public folder
 cd public
@@ -29,3 +30,5 @@ git push origin master
 
 # Come Back
 cd ..
+
+git commit -am "Update submodules"
