@@ -2,3 +2,7 @@
 	path = public
 	url = git@github.com:izqui/izqui.github.io.git
 	branch = master
+[submodule "themes/hugo-identity-theme"]
+	path = themes/hugo-identity-theme
+	url = git@github.com:izqui/hugo-identity-theme.git
+	branch = master
