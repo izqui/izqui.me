@@ -57,15 +57,22 @@ googleAnalytics = "UA-76689321-1"
 	# Social settings
 	# You may change these with your social links or add others
 
-  [[params.social]]
-    title = "Twitter"
-    icon = "fa-twitter"
-    link = "https://twitter.com/izqui9"
 
-  [[params.social]]
-    title = "Github"
-    icon = "fa-github"
-    link = "https://github.com/izqui"
+	[[params.social]]
+		title = "Github"
+		icon = "fa-github"
+		link = "https://github.com/izqui"
+
+	[[params.social]]
+	  title = "Telegram"
+	  icon = "fa-paper-plane"
+	  link = "https://telegram.me/izqui"
+
+	[[params.social]]
+		title = "Twitter"
+		icon = "fa-twitter"
+		link = "https://twitter.com/izqui9"
+
 
 	[[params.social]]
 		title = "Instagram"
@@ -75,3 +82,5 @@ googleAnalytics = "UA-76689321-1"
 	# Footer settings
 	[params.footer]
 		copyright = "2016"
+		title = "Source"
+		url = "http://github.com/izqui/izqui.me"
