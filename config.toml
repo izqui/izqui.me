@@ -1,5 +1,5 @@
 # Site settings
-baseurl = "http://replace-this-with-your-hugo-site.com" #without ending slash
+baseurl = "http://izqui.github.io" #without ending slash
 languageCode = "en-us"
 theme = "hugo-identity-theme"
 title = "Jorge Izquierdo"
