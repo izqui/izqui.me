@@ -574,7 +574,7 @@ button,
         left: -2em;
         width: calc(100% + 4em); } }
   body.is-loading #main {
-    opacity: 0.5;
+    opacity: 0.0;
     -moz-transform: rotateX(20deg);
     -webkit-transform: rotateX(20deg);
     -ms-transform: rotateX(20deg);
