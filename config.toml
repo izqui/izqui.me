@@ -57,7 +57,6 @@ googleAnalytics = "UA-76689321-1"
 	# Social settings
 	# You may change these with your social links or add others
 
-
 	[[params.social]]
 		title = "Github"
 		icon = "fa-github"
